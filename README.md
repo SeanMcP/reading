@@ -4,4 +4,4 @@
 
 ## Contents
 
-- [CVs](./cvs/): All English words sorted by their consonant-vowel keys
+- [Consonant-vowel patterns](./consonant-vowel-patterns/): All English words sorted by their consonant-vowel patterns
