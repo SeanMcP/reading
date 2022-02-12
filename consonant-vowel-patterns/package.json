@@ -1,7 +1,7 @@
 {
-  "name": "consonants-and-vowels",
-  "version": "1.0.0",
-  "description": "All English words organized by consonant-vowel keys",
+  "name": "consonant-vowel-patterns",
+  "version": "0.0.0",
+  "description": "All English words organized by consonant-vowel patterns",
   "files": [
     "lib/"
   ],
@@ -9,10 +9,11 @@
   "keywords": [
     "english",
     "consonants",
-    "vowels"
+    "vowels",
+    "patterns"
   ],
-  "author": "Sean McPherson",
-  "license": "ISC",
+  "author": "Sean McPherson <sean@seanmcp.com> (https://github.com/seanmcp)",
+  "license": "Unlicense",
   "devDependencies": {
     "an-array-of-english-words": "^2.0.0"
   }
