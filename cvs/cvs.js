@@ -3,7 +3,9 @@ const words = require("an-array-of-english-words");
 
 const vowels = "aeiouy";
 
-const map = {};
+const map = {
+  cvce: [],
+};
 
 for (let i = 0; i < words.length; i++) {
   const word = words[i];
@@ -13,6 +15,10 @@ for (let i = 0; i < words.length; i++) {
   for (let j = 0; j < word.length; j++) {
     const letter = word[j];
     key += vowels.includes(letter) ? "v" : "c";
+  }
+
+  if (key === "cvcv" && word.slice(-1) === "e") {
+    map.cvce.push(word);
   }
 
   if (!map[key]) {
