@@ -1,6 +1,6 @@
 {
   "name": "consonant-vowel-patterns",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "All English words organized by consonant-vowel patterns",
   "files": [
     "lib/"
@@ -13,7 +13,13 @@
     "patterns"
   ],
   "author": "Sean McPherson <sean@seanmcp.com> (https://github.com/seanmcp)",
+  "repository": "https://github.com/seanmcp/reading",
+  "homepage": "https://github.com/SeanMcP/reading/tree/master/consonant-vowel-patterns#readme",
+  "bugs": "https://github.com/seanmcp/reading/issues",
   "license": "Unlicense",
+  "scripts": {
+    "postpublish": "git push --tags"
+  },
   "devDependencies": {
     "an-array-of-english-words": "^2.0.0"
   }
