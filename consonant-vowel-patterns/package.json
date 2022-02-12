@@ -1,0 +1,19 @@
+{
+  "name": "consonants-and-vowels",
+  "version": "1.0.0",
+  "description": "All English words organized by consonant-vowel keys",
+  "files": [
+    "lib/"
+  ],
+  "main": "./lib/all.json",
+  "keywords": [
+    "english",
+    "consonants",
+    "vowels"
+  ],
+  "author": "Sean McPherson",
+  "license": "ISC",
+  "devDependencies": {
+    "an-array-of-english-words": "^2.0.0"
+  }
+}
