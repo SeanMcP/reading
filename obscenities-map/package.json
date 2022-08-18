@@ -1,0 +1,28 @@
+{
+  "name": "obscenities-map",
+  "version": "1.0.0",
+  "description": "A tiered lookup for English obscenities",
+  "main": "index.js",
+  "files": [
+    "index.js",
+    "level-1-words.js",
+    "level-2-words.js"
+  ],
+  "scripts": {
+    "build": "node build.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "obscenities",
+    "obscenity",
+    "vulgarities",
+    "vulgarity",
+    "profanities",
+    "profanity"
+  ],
+  "author": "Sean McPherson <sean@seanmcp.com> (https://github.com/seanmcp)",
+  "license": "Unlicense",
+  "devDependencies": {
+    "badwords-list": "^1.0.0"
+  }
+}
