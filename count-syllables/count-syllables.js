@@ -39,7 +39,7 @@ function countSyllables(raw) {
     const chunk = vowelChunks[i];
     switch (chunk) {
       case "ia":
-      //   case "ie": // Removing this is debatable
+      // case "ie": // Removing this is debatable
       case "ua": {
         syllableCount += 2;
         break;

@@ -1,40 +1,38 @@
-const fs = require("fs");
-const path = require("path");
-const csv = require("fast-csv");
 const countSyllables = require("./count-syllables");
 const comparisons = require("./comparisons");
 
-const words = [];
+const kaggleDict = require("./arnav-sharma-as_syllable-word.json");
+const myDict = require("./common-english-words-and-syllables.json");
 
-function test(cb) {
+const runs = [];
+
+function test(cb, dict, options = {}) {
   let total = 0;
   let correct = 0;
-  for (let i = 0; i < words.length; i++) {
-    const [word, syllables] = words[i];
+  const quiet = options.quiet || false;
 
+  Object.entries(dict).forEach(([word, syllables]) => {
     if (syllables) {
       total++;
       const result = cb(word);
       if (result == syllables) {
         correct++;
       } else {
-        console.log("WRONG", word, syllables, result);
+        !quiet && console.log("WRONG", word, syllables, result);
       }
     }
-  }
+  });
+
+  const fraction = correct / total;
 
   console.log(correct + "/" + total + " correct");
-  console.log(correct / total);
+  console.log(fraction);
+
+  runs.push([cb.name, fraction]);
 }
 
-fs.createReadStream(
-  path.resolve(__dirname, "common-english-words-and-syllables.csv")
-)
-  .pipe(csv.parse())
-  .on("error", (error) => console.error(error))
-  .on("data", (row) => words.push(row))
-  .on("end", (rowCount) => {
-    console.log(`Parsed ${rowCount} lines`);
-    test(countSyllables);
-    // test(comparisons.syllapy);
-  });
+test(countSyllables, kaggleDict);
+test(countSyllables, myDict, { quiet: true });
+test(comparisons.syllapy, kaggleDict, { quiet: true });
+
+console.log(runs);

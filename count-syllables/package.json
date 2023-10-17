@@ -11,5 +11,8 @@
   "license": "ISC",
   "devDependencies": {
     "fast-csv": "^4.3.6"
+  },
+  "dependencies": {
+    "dotenv": "^16.3.1"
   }
 }
