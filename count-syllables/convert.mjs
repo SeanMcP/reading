@@ -5,7 +5,7 @@ import path from "node:path";
 const myData = {};
 const kaggleData = {};
 
-fs.createReadStream("common-english-words-and-syllables.csv")
+fs.createReadStream("data/common-english-words-and-syllables.csv")
   .pipe(csv.parse())
   .on("error", (err) => {
     throw new Error(err);
@@ -15,12 +15,12 @@ fs.createReadStream("common-english-words-and-syllables.csv")
   })
   .on("end", () => {
     fs.writeFileSync(
-      "common-english-words-and-syllables.json",
+      "data/common-english-words-and-syllables.json",
       JSON.stringify(myData)
     );
   });
 
-fs.createReadStream("arnav-sharma-as_syllable-word.csv")
+fs.createReadStream("data/arnav-sharma-as_syllable-word.csv")
   .pipe(csv.parse())
   .on("error", (err) => {
     throw new Error(err);
@@ -31,7 +31,7 @@ fs.createReadStream("arnav-sharma-as_syllable-word.csv")
   })
   .on("end", () => {
     fs.writeFileSync(
-      "arnav-sharma-as_syllable-word.json",
+      "data/arnav-sharma-as_syllable-word.json",
       JSON.stringify(kaggleData)
     );
   });

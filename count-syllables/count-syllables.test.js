@@ -1,8 +1,8 @@
 const countSyllables = require("./count-syllables");
 const comparisons = require("./comparisons");
 
-const kaggleDict = require("./arnav-sharma-as_syllable-word.json");
-const myDict = require("./common-english-words-and-syllables.json");
+const kaggleDict = require("./data/arnav-sharma-as_syllable-word.json");
+const myDict = require("./data/common-english-words-and-syllables.json");
 
 const runs = [];
 
