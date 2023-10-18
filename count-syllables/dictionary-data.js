@@ -4,7 +4,7 @@ require("dotenv").config();
 const kaggleData = require("./data/arnav-sharma-as_syllable-word.json");
 const words = Object.keys(kaggleData);
 
-const dictionaryData = require("./dictionary-data.json");
+const dictionaryData = require("./data/dictionary-data.json");
 
 async function getData() {
   for await (const word of words) {
@@ -26,6 +26,7 @@ async function getSyllables(word) {
   try {
     const response = await fetch(url);
     const data = await response.json();
+    console.log(data)
     const [first] = data;
     return first.hwi.hw;
   } catch (e) {
@@ -33,6 +34,8 @@ async function getSyllables(word) {
   }
 }
 
-getData().finally(() => {
-  fs.writeFileSync("data/dictionary-data.json", JSON.stringify(dictionaryData));
-});
+// getData().finally(() => {
+//   fs.writeFileSync("data/dictionary-data.json", JSON.stringify(dictionaryData));
+// });
+
+getSyllables("theory").then(console.log)

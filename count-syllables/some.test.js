@@ -1,17 +1,15 @@
 const countSyllables = require("./count-syllables");
-const comparisons = require("./comparisons");
+const testUtils = require("./test-utils");
 
-const kaggleDict = require("./data/arnav-sharma-as_syllable-word.json");
-const myDict = require("./data/common-english-words-and-syllables.json");
-
-const runs = [];
+const dictionary = require("./data/dictionary-data.json");
 
 function compare(cb, word) {
   const actual = cb(word);
-  const expected = kaggleDict[word];
+  const hw = dictionary[word];
+  const expected = testUtils.hwToSyllables(hw);
   if (actual !== expected) {
-    console.log("WRONG", word, expected, actual);
+    testUtils.log({ word, expected, actual, hw });
   }
 }
 
-compare(countSyllables, "vary");
+compare(countSyllables, "equal");
