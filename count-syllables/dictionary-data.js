@@ -13,20 +13,21 @@ async function getData() {
     }
 
     try {
-        const syllables = await getSyllables(word);
-        dictionaryData[word] = syllables;
+      const syllables = await getSyllables(word);
+      dictionaryData[word] = syllables;
     } catch (e) {
-        throw new Error(e);
+      throw new Error(e);
     }
   }
 }
 
+/** @see https://www.dictionaryapi.com/products/api-collegiate-dictionary */
 async function getSyllables(word) {
   const url = `https://www.dictionaryapi.com/api/v3/references/collegiate/json/${word}?key=${process.env.DICTIONARY_API_KEY}`;
   try {
     const response = await fetch(url);
     const data = await response.json();
-    console.log(data)
+    console.log(data);
     const [first] = data;
     return first.hwi.hw;
   } catch (e) {
@@ -38,4 +39,4 @@ async function getSyllables(word) {
 //   fs.writeFileSync("data/dictionary-data.json", JSON.stringify(dictionaryData));
 // });
 
-getSyllables("theory").then(console.log)
+getSyllables("theory").then(console.log);

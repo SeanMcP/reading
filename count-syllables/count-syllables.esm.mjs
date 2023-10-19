@@ -29,7 +29,7 @@ function wordMatchesPattern(word, pattern) {
   return true;
 }
 
-function countSyllables(raw) {
+export default function countSyllables(raw) {
   const word = raw.toLowerCase();
   let syllableCount = 0;
   const vowelChunks = [];
@@ -92,5 +92,3 @@ function countSyllables(raw) {
 
   return syllableCount;
 }
-
-module.exports = countSyllables;
